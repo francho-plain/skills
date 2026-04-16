@@ -1,0 +1,6 @@
+{
+  "name": "francho-english-teacher",
+  "version": "0.1.0",
+  "description": "Use your AI interactions to improve your English",
+  "skills": ["./skills/"]
+}

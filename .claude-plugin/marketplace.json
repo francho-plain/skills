@@ -1,0 +1,13 @@
+{
+  "name": "francho-skills",
+  "owner": {
+    "name": "Francho"
+  },
+  "plugins": [
+    {
+      "name": "francho-english-teacher",
+      "source": "./plugins/francho-english-teacher",
+      "description": "Use your AI interactions to improve your English."
+    }
+  ]
+}
