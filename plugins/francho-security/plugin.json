@@ -1,0 +1,7 @@
+{
+  "name": "francho-security",
+  "version": "0.1.0",
+  "description": "Security checks for your project",
+  "skills": ["./skills/"],
+  "agents": ["./agents/"]
+}

@@ -8,6 +8,11 @@
       "name": "francho-english-teacher",
       "source": "./plugins/francho-english-teacher",
       "description": "Use your AI interactions to improve your English."
+    },
+    {
+      "name": "francho-security",
+      "source": "./plugins/francho-security",
+      "description": "Security checks for your project."
     }
   ]
 }
