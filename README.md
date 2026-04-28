@@ -1,148 +1,117 @@
 # Francho Skills
 
-Collection of agent plugins to use with VS Code (GitHub Copilot Chat) and Copilot CLI.
+A practical marketplace of GitHub Copilot plugins for everyday workflows: English coaching, Python guidance, security auditing, and brag tracking.
 
-This repository includes:
+[![Marketplace](https://img.shields.io/badge/marketplace-francho--skills-1f6feb)](.claude-plugin/marketplace.json)
+[![Plugins](https://img.shields.io/badge/plugins-4-success)](plugins)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-- A marketplace in .claude-plugin/marketplace.json
-- Three plugins:
-	- plugins/francho-english-teacher
-	- plugins/francho-python
-	- plugins/francho-security
-- Main customizations included in this repository:
-	- Skill: prompt-english-coach
-	- Agent: Python coach
-	- Skill: security-audit
-	- Agent: code-cop
+Inspired by the discoverability style of awesome plugin collections, but focused on installable Copilot Agent Plugins you can use right away.
 
-## Repository structure
+## Plugin Catalog
 
-```text
-.
-├── .claude-plugin/
-│   └── marketplace.json
-└── plugins/
-	├── francho-english-teacher/
-	│   ├── plugin.json
-	│   ├── README.md
-	│   └── skills/
-	│       └── prompt-english-coach/
-	│           └── SKILL.md
-	├── francho-python/
-	│   ├── plugin.json
-	│   ├── README.md
-	│   └── agents/
-	│       └── python-databricks-coach.agent.md
-	└── francho-security/
-		├── plugin.json
-		├── README.md
-		├── agents/
-		│   └── code-cop.agent.md
-		└── skills/
-			└── security-audit/
-				└── SKILL.md
-```
+| Plugin | Type | What you get |
+| --- | --- | --- |
+| [francho-english-teacher](plugins/francho-english-teacher) | Skill | Improves your English directly in chat, with a short score and correction tip. |
+| [francho-python](plugins/francho-python) | Agent | Python and Databricks coaching for fundamentals, code quality, and practical development workflows. |
+| [francho-security](plugins/francho-security) | Skill + Agent | Security audits with a dedicated read-only analyst agent and structured remediation output. |
+| [francho-brag](plugins/francho-brag) | Skill | Adds achievements to your brag document with required-field validation and memory of your brag file name. |
 
-## Requirements
+## Why this repo
 
-- A recent VS Code version with GitHub Copilot enabled
-- Copilot CLI installed (for the CLI section)
-- Git available on your system
+- Curated plugin set with clear, task-focused behavior.
+- Ready for both VS Code and Copilot CLI usage.
+- Includes a marketplace definition in [.claude-plugin/marketplace.json](.claude-plugin/marketplace.json).
 
-## Usage in VS Code
+## Quick Start
 
-Agent Plugins in VS Code are currently in preview and depend on your organization settings.
+### VS Code (Agent Plugins)
 
-### Option A: install from source (recommended for quick testing)
+Agent Plugins in VS Code are in preview and may depend on organization settings.
 
 1. Open the Command Palette.
-2. Run Chat: Install Plugin From Source.
-3. Enter `FranchoLab/skills` as the source repository.
-4. Enable the plugin from Extensions > Agent Plugins - Installed or from Chat Customizations.
+2. Run `Chat: Install Plugin From Source`.
+3. Enter `FranchoLab/skills`.
+4. Enable plugins from Extensions (`@agentPlugins`) or Chat Customizations.
 
-### Option B: use marketplaces in VS Code
-
-VS Code supports plugin marketplaces through chat.plugins.marketplaces.
-
-Example:
+Optional marketplace setting:
 
 ```json
 {
-	"chat.plugins.marketplaces": [
-		"FranchoLab/skills"
-	]
+  "chat.plugins.marketplaces": [
+    "github/copilot-chat-plugins",
+    "github/awesome-copilot",
+    "FranchoLab/skills"
+  ]
 }
 ```
 
-Then, in Extensions, search with @agentPlugins to browse and install.
+### Copilot CLI
 
-## Usage in Copilot CLI
-
-### 1) Register this repository as a marketplace
-
-This repo includes a marketplace in .claude-plugin/marketplace.json, which Copilot CLI detects when you add the repository.
+1. Register this repo as a marketplace:
 
 ```bash
 copilot plugin marketplace add FranchoLab/skills
 copilot plugin marketplace list
 ```
 
-The marketplace name is francho-skills.
+The marketplace name is `francho-skills`.
 
-### 2) Install the plugin from that marketplace
+2. Install plugins from the marketplace:
 
 ```bash
 copilot plugin install francho-english-teacher@francho-skills
 copilot plugin install francho-python@francho-skills
 copilot plugin install francho-security@francho-skills
+copilot plugin install francho-brag@francho-skills
 copilot plugin list
 ```
 
-### 3) Alternative: install directly from the repository
+3. Alternative: install directly from repository paths:
 
 ```bash
 copilot plugin install FranchoLab/skills:plugins/francho-english-teacher
 copilot plugin install FranchoLab/skills:plugins/francho-python
 copilot plugin install FranchoLab/skills:plugins/francho-security
+copilot plugin install FranchoLab/skills:plugins/francho-brag
 copilot plugin list
 ```
 
-### 4) Update or uninstall
+## Typical Use Cases
 
-```bash
-copilot plugin update francho-english-teacher
-copilot plugin update francho-python
-copilot plugin update francho-security
-copilot plugin uninstall francho-english-teacher
-copilot plugin uninstall francho-python
-copilot plugin uninstall francho-security
+- "Coach my English in every prompt I write in English."
+- "Review this Python module and suggest refactors for readability."
+- "Run a security audit for recent repository changes."
+- "Add this achievement to my brag document."
+
+## Repository Layout
+
+```text
+.
+├── .claude-plugin/
+│   └── marketplace.json
+└── plugins/
+    ├── francho-brag/
+    ├── francho-english-teacher/
+    ├── francho-python/
+    └── francho-security/
 ```
 
-## Useful marketplace commands (Copilot CLI)
+## Troubleshooting
 
-```bash
-copilot plugin marketplace list
-copilot plugin marketplace browse francho-skills
-copilot plugin marketplace remove francho-skills
-```
+- Plugin not visible in VS Code:
+  - Confirm Agent Plugins are enabled by policy/settings.
+  - Confirm each plugin has a valid `plugin.json`.
+- Skill or agent not triggering:
+  - Verify naming and paths in each `SKILL.md` or `.agent.md` file.
+- Copilot CLI installation fails:
+  - Check command syntax with `copilot plugin --help`.
 
-Note: if the marketplace has installed plugins, removal might require --force.
-
-## Quick troubleshooting
-
-- The plugin does not appear in VS Code:
-	- Check that chat.plugins.enabled is enabled by your organization.
-	- Confirm plugin.json is in a recognized path (root, .plugin, .github/plugin, .claude-plugin).
-- The skill does not load:
-	- Check the name in SKILL.md and the skill folder name.
-- Copilot CLI install fails:
-	- Run copilot plugin [SUBCOMMAND] --help to see command help.
-
-## Official references
+## References
 
 - VS Code Agent Plugins:
-	https://code.visualstudio.com/docs/copilot/customization/agent-plugins
-- Copilot CLI - Finding and installing plugins:
-	https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing
+  https://code.visualstudio.com/docs/copilot/customization/agent-plugins
+- Copilot CLI, finding and installing plugins:
+  https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing
 - Copilot CLI plugin reference:
-	https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference
+  https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference
