@@ -13,6 +13,11 @@
       "name": "francho-security",
       "source": "./plugins/francho-security",
       "description": "Security checks for your project."
+    },
+    {
+      "name": "francho-python",
+      "source": "./plugins/francho-python",
+      "description": "Python with copilot"
     }
   ]
 }

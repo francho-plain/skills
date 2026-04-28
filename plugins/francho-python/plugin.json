@@ -1,0 +1,6 @@
+{
+  "name": "francho-python",
+  "version": "0.1.0",
+  "description": "Python related setup",
+  "agents": ["./agents/"]
+}

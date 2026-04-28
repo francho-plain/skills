@@ -5,11 +5,13 @@ Collection of agent plugins to use with VS Code (GitHub Copilot Chat) and Copilo
 This repository includes:
 
 - A marketplace in .claude-plugin/marketplace.json
-- Two plugins:
+- Three plugins:
 	- plugins/francho-english-teacher
+	- plugins/francho-python
 	- plugins/francho-security
 - Main customizations included in this repository:
 	- Skill: prompt-english-coach
+	- Agent: Python coach
 	- Skill: security-audit
 	- Agent: code-cop
 
@@ -26,6 +28,11 @@ This repository includes:
 	│   └── skills/
 	│       └── prompt-english-coach/
 	│           └── SKILL.md
+	├── francho-python/
+	│   ├── plugin.json
+	│   ├── README.md
+	│   └── agents/
+	│       └── python-databricks-coach.agent.md
 	└── francho-security/
 		├── plugin.json
 		├── README.md
@@ -86,6 +93,7 @@ The marketplace name is francho-skills.
 
 ```bash
 copilot plugin install francho-english-teacher@francho-skills
+copilot plugin install francho-python@francho-skills
 copilot plugin install francho-security@francho-skills
 copilot plugin list
 ```
@@ -94,6 +102,7 @@ copilot plugin list
 
 ```bash
 copilot plugin install FranchoLab/skills:plugins/francho-english-teacher
+copilot plugin install FranchoLab/skills:plugins/francho-python
 copilot plugin install FranchoLab/skills:plugins/francho-security
 copilot plugin list
 ```
@@ -102,8 +111,10 @@ copilot plugin list
 
 ```bash
 copilot plugin update francho-english-teacher
+copilot plugin update francho-python
 copilot plugin update francho-security
 copilot plugin uninstall francho-english-teacher
+copilot plugin uninstall francho-python
 copilot plugin uninstall francho-security
 ```
 
