@@ -1,5 +1,5 @@
 ---
-name: base-tone-first
+name: base-tone
 description: "ALWAYS invoke this skill first on every user message to set the base interaction tone and response language before applying other skills or instructions. Use for default Copilot behavior in daily chats."
 ---
 
