@@ -18,6 +18,11 @@
       "name": "francho-python",
       "source": "./plugins/francho-python",
       "description": "Python with copilot"
+    },
+    {
+      "name": "francho-brag",
+      "source": "./plugins/francho-brag",
+      "description": "Maintain your brag document"
     }
   ]
 }
