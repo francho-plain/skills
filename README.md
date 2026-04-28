@@ -1,12 +1,11 @@
 # Francho Skills
 
-A practical marketplace of GitHub Copilot plugins for everyday workflows: English coaching, Python guidance, security auditing, and brag tracking.
+A practical marketplace of GitHub Copilot plugins for everyday workflows: English coaching, Python guidance, security auditing, brag tracking, and default Copilot baseline settings.
 
 [![Marketplace](https://img.shields.io/badge/marketplace-francho--skills-1f6feb)](.claude-plugin/marketplace.json)
-[![Plugins](https://img.shields.io/badge/plugins-4-success)](plugins)
+[![Plugins](https://img.shields.io/badge/plugins-5-success)](plugins)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-Inspired by the discoverability style of awesome plugin collections, but focused on installable Copilot Agent Plugins you can use right away.
 
 ## Plugin Catalog
 
@@ -16,6 +15,7 @@ Inspired by the discoverability style of awesome plugin collections, but focused
 | [francho-python](plugins/francho-python) | Agent | Python and Databricks coaching for fundamentals, code quality, and practical development workflows. |
 | [francho-security](plugins/francho-security) | Skill + Agent | Security audits with a dedicated read-only analyst agent and structured remediation output. |
 | [francho-brag](plugins/francho-brag) | Skill | Adds achievements to your brag document with required-field validation and memory of your brag file name. |
+| [francho-copilot-base](plugins/francho-copilot-base) | Instructions | Default response tone and baseline behavior for everyday Copilot interactions. |
 
 ## Why this repo
 
@@ -64,6 +64,7 @@ copilot plugin install francho-english-teacher@francho-skills
 copilot plugin install francho-python@francho-skills
 copilot plugin install francho-security@francho-skills
 copilot plugin install francho-brag@francho-skills
+copilot plugin install francho-copilot-base@francho-skills
 copilot plugin list
 ```
 
@@ -74,6 +75,7 @@ copilot plugin install FranchoLab/skills:plugins/francho-english-teacher
 copilot plugin install FranchoLab/skills:plugins/francho-python
 copilot plugin install FranchoLab/skills:plugins/francho-security
 copilot plugin install FranchoLab/skills:plugins/francho-brag
+copilot plugin install FranchoLab/skills:plugins/francho-copilot-base
 copilot plugin list
 ```
 
@@ -83,6 +85,7 @@ copilot plugin list
 - "Review this Python module and suggest refactors for readability."
 - "Run a security audit for recent repository changes."
 - "Add this achievement to my brag document."
+- "Use a concise and practical default tone in all Copilot responses."
 
 ## Repository Layout
 
@@ -92,6 +95,7 @@ copilot plugin list
 │   └── marketplace.json
 └── plugins/
     ├── francho-brag/
+    ├── francho-copilot-base/
     ├── francho-english-teacher/
     ├── francho-python/
     └── francho-security/

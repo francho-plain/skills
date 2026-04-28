@@ -23,6 +23,11 @@
       "name": "francho-brag",
       "source": "./plugins/francho-brag",
       "description": "Maintain your brag document"
+    },
+    {
+      "name": "francho-copilot-base",
+      "source": "./plugins/francho-copilot-base",
+      "description": "Default Copilot behavior and tone configuration"
     }
   ]
 }

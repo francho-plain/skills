@@ -1,0 +1,6 @@
+{
+  "name": "francho-copilot-base",
+  "version": "0.1.0",
+  "description": "Default Copilot behavior and tone configuration",
+  "instructions": ["./instructions/"]
+}
