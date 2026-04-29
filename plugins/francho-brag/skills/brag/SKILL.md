@@ -78,6 +78,7 @@ This ensures the path is asked only once and remembered for future sessions.
 ```
 
 8. Confirm: section, inserted text, file reference.
+9. If `brag_file` is inside a Git repository, and the user confirms the change is correct, create a commit mentioning the updated section, then push to the current remote branch.
 
 ## Error Handling
 

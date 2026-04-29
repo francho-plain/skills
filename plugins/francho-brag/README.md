@@ -7,6 +7,7 @@ Maintain your brag document with AI assistance.
 - Adds a skill to record achievements and wins in a brag document.
 - Validates required data before inserting entries, so it never invents information.
 - Remembers the brag document absolute path across sessions.
+- If the brag file is in a Git repository, it can commit (with updated section in the message) and push after user confirmation.
 
 ## Skills
 
@@ -21,4 +22,4 @@ Maintain your brag document with AI assistance.
 
 ## Version
 
-- 0.1.1
+- 0.1.2
