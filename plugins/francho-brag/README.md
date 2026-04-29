@@ -23,3 +23,18 @@ Maintain your brag document with AI assistance.
 ## Version
 
 - 0.1.2
+
+## Changelog
+
+### 0.1.2
+
+- feat: enhance francho-brag plugin to support optional commit/push after user confirmation.
+
+### 0.1.1
+
+- feat: update brag plugin to require absolute path for document storage and enhance memory handling.
+
+### 0.1.0
+
+- feat: add francho-brag plugin for maintaining brag documents and associated skills.
+- feat: add README for francho-brag plugin with usage instructions and features.

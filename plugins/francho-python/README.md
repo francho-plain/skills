@@ -21,3 +21,9 @@ Python coaching focused on fundamentals, code quality, and Databricks Apps.
 ## Version
 
 - 0.1.0
+
+## Changelog
+
+### 0.1.0
+
+- feat: add francho-python plugin for Python coaching and Databricks Apps development.

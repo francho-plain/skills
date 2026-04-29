@@ -19,3 +19,9 @@ Use your AI interactions to improve your English.
 ## Version
 
 - 0.1.0
+
+## Changelog
+
+### 0.1.0
+
+- feat: add initial plugin and skill files for English teaching functionality.

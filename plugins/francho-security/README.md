@@ -25,3 +25,9 @@ Run security checks on your project and dependencies.
 ## Version
 
 - 0.1.0
+
+## Changelog
+
+### 0.1.0
+
+- feat: add francho-security plugin with security audit capabilities.
