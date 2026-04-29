@@ -24,3 +24,4 @@ applyTo: "**"
 
 - If a task modifies any plugin skill or agent, do not consider the task complete until the plugin version is bumped.
 - By default, bump the plugin patch version (semver patch). Only use minor/major when explicitly requested.
+- If a skill/agent change results in a plugin version bump, update the plugin `README.md` changelog to document that version's changes before considering the task complete.
