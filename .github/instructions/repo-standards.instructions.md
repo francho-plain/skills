@@ -21,3 +21,6 @@ applyTo: "**"
   - `skills/<skill-name>/SKILL.md` for skills
   - `agents/<agent-name>.agent.md` for agents
 - After plugin changes, confirm `README.md` and `plugin.json` reflect current capabilities and naming.
+
+- If a task modifies any plugin skill or agent, do not consider the task complete until the plugin version is bumped.
+- By default, bump the plugin patch version (semver patch). Only use minor/major when explicitly requested.

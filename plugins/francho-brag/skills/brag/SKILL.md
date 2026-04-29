@@ -26,15 +26,20 @@ Use these references when:
 The skill must determine the target brag file **before** proceeding:
 
 1. **Check memory**: Read `/memories/brag-config.md` for a saved `brag_file` value.
-2. **If found**: Use that filename.
-3. **If not found**: Ask the user for the brag document filename, then save it to `/memories/brag-config.md` using this format:
+2. **If found**: Use that absolute path.
+3. **If not found**: Ask the user for the brag document **absolute path**, then save it to `/memories/brag-config.md` using this format:
    ```markdown
    # Brag Configuration
    
-   brag_file: <user-provided-filename>
+   brag_file: <absolute-path>
    ```
+4. **Always persist absolute paths**: Never save relative paths in memory.
+5. **Cross-platform compatibility**:
+   - In VS Code on Windows, store a Windows absolute path (example: `C:\Users\name\docs\brag.md`) or a WSL UNC path if the file lives in WSL (example: `\\wsl$\Ubuntu\home\name\brag.md`).
+   - In VS Code WSL or Copilot CLI on Linux, store a Linux/WSL absolute path (example: `/home/name/brag.md`).
+   - If a memory path is not directly usable in the current runtime (Windows vs WSL vs CLI), ask for the equivalent absolute path and update `/memories/brag-config.md`.
 
-This ensures the filename is asked only once and remembered for future sessions.
+This ensures the path is asked only once and remembered for future sessions.
 
 ## Required Data
 
@@ -82,4 +87,4 @@ This ensures the filename is asked only once and remembered for future sessions.
 | Year block missing | Ask user for action |
 | Section not found | List valid options, ask again |
 | Invalid date | Attempt auto-fix, else ask |
-| Memory file missing | Ask user for filename, create memory file |
+| Memory file missing | Ask user for absolute path, create memory file |
