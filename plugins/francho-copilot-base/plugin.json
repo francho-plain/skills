@@ -1,6 +1,6 @@
 {
   "name": "francho-copilot-base",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "Default Copilot behavior and tone configuration",
   "skills": ["./skills/"]
 }
