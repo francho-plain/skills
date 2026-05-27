@@ -6,8 +6,9 @@ Default Copilot configuration for consistent behavior and response tone.
 
 - Adds a reusable base skill that sets default behavior preferences.
 - Defines a mandatory baseline skill intended to run first on every user message.
-- Forces base tone and language setup before other skills.
+- Forces base tone, language, context priority, and reliability setup before other skills.
 - Shows a localized "default tone loaded" confirmation at response start.
+- Prioritizes current request and attached context over generic memory.
 - Enforces a reliability rule: do not invent information when context is missing.
 - Requires user confirmation before major architecture or project-direction decisions.
 
@@ -22,9 +23,13 @@ Default Copilot configuration for consistent behavior and response tone.
 
 ## Version
 
-- 0.2.3
+- 0.2.4
 
 ## Changelog
+
+### 0.2.4
+
+- docs: tighten the base skill for clearer rule ordering, leaner prompts, better context priority, and stronger anti-hallucination guidance.
 
 ### 0.2.1
 
