@@ -1,7 +1,7 @@
 ---
-name: brag
+name: bragdoc
 description: 'Add achievement to brag document. Use when: recording accomplishments, logging wins, adding brag entries. Validates required data and inserts in existing sections only.'
-argument-hint: 'title, date, description'
+argument-hint: 'date, description'
 user-invocable: true
 disable-model-invocation: false
 ---
@@ -25,19 +25,20 @@ Use these references when:
 
 The skill must determine the target brag file **before** proceeding:
 
-1. **Check memory**: Read `/memories/brag-config.md` for a saved `brag_file` value.
+1. **Check memory**: Read `/memories/bragdoc-config.md` for a saved `brag_file` value.
 2. **If found**: Use that absolute path.
-3. **If not found**: Ask the user for the brag document **absolute path**, then save it to `/memories/brag-config.md` using this format:
+3. **If not found**: Ask the user for the brag document **absolute path**, then save it to `/memories/bragdoc-config.md` using this format:
    ```markdown
    # Brag Configuration
    
    brag_file: <absolute-path>
    ```
+   3.a **If the provided path does not exist**: Ask the user whether to create a new brag document at that path from the provided template (`./references/BRAG-TEMPLATE.md`). If the user confirms, create the file using the template contents, persist the path in `/memories/bragdoc-config.md`, and continue. If the user declines, ask for an alternate absolute path or abort the operation.
 4. **Always persist absolute paths**: Never save relative paths in memory.
 5. **Cross-platform compatibility**:
    - In VS Code on Windows, store a Windows absolute path (example: `C:\Users\name\docs\brag.md`) or a WSL UNC path if the file lives in WSL (example: `\\wsl$\Ubuntu\home\name\brag.md`).
    - In VS Code WSL or Copilot CLI on Linux, store a Linux/WSL absolute path (example: `/home/name/brag.md`).
-   - If a memory path is not directly usable in the current runtime (Windows vs WSL vs CLI), ask for the equivalent absolute path and update `/memories/brag-config.md`.
+   - If a memory path is not directly usable in the current runtime (Windows vs WSL vs CLI), ask for the equivalent absolute path and update `/memories/bragdoc-config.md`.
 
 This ensures the path is asked only once and remembered for future sessions.
 
@@ -45,9 +46,9 @@ This ensures the path is asked only once and remembered for future sessions.
 
 | Field | Format |
 |-------|--------|
-| Title | Short, descriptive |
 | Date | Auto-normalized to `YYYY-MM-DD` or `YYYY-MM` |
 | Description | Brief, impact-focused |
+| Title (optional) | Short, descriptive, if not provided infeer from description |
 
 ## Rules
 
@@ -84,7 +85,7 @@ This ensures the path is asked only once and remembered for future sessions.
 
 | Condition | Action |
 |-----------|--------|
-| File missing | Stop, report |
+ | File missing | Ask the user whether to create the file from `./references/BRAG-TEMPLATE.md`; if they confirm, create it and continue, otherwise abort and surface guidance to provide a different path. |
 | Year block missing | Ask user for action |
 | Section not found | List valid options, ask again |
 | Invalid date | Attempt auto-fix, else ask |

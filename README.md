@@ -14,7 +14,7 @@ A practical marketplace of GitHub Copilot plugins for everyday workflows: Englis
 | [francho-english-teacher](plugins/francho-english-teacher) | Skill | Improves your English directly in chat, with a short score and correction tip. |
 | [francho-python](plugins/francho-python) | Agent | Python and Databricks coaching for fundamentals, code quality, and practical development workflows. |
 | [francho-security](plugins/francho-security) | Skill + Agent | Security audits with a dedicated read-only analyst agent and structured remediation output. |
-| [francho-brag](plugins/francho-brag) | Skill | Adds achievements to your brag document with required-field validation, memory of your brag file absolute path, and optional commit/push after confirmation. |
+| [francho-brag](plugins/francho-brag) | Skill | Adds achievements through `bragdoc` with required-field validation, memory of your brag file absolute path, optional template-based file creation, and optional commit/push after confirmation. |
 | [francho-copilot-base](plugins/francho-copilot-base) | Skill | Mandatory baseline behavior layer intended to run first, setting tone, language, context priority, and a stricter anti-hallucination policy. |
 
 ## Why this repo
