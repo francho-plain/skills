@@ -23,9 +23,13 @@ Default Copilot configuration for consistent behavior and response tone.
 
 ## Version
 
-- 0.2.4
+- 0.2.5
 
 ## Changelog
+
+### 0.2.5
+
+- refactor: optimize `base-tone-first` skill for clarity, token efficiency, context retrieval, and anti-hallucination — tighten language resolution priority, replace placeholder confirmation with concrete example, require tool verification before proceeding, and remove redundancy.
 
 ### 0.2.4
 
